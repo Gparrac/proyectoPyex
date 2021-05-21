@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{% block title %}
+Inicio sesion
+{% endblock %}
+{% block content %}
+
+
+
+<form class="my-5" method="POST" action="/login">
+    {% if error %}
+    <div class="container-fluid mb-3 alert alert-danger d-flex justify-content-center">
+        <h5>{{ error }}</h5>
+    </div>
+    {% endif %}
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre de usuario</label>
+        <input type="text" class="form-control" name="nombreU" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">ingrese su correo</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" name="contrasena">
+    </div>
+    <div class="container-fluid d-flex justify-content-center ">
+        <button type="submit" class="btn btn-primary align-self-center">ingresar</button>
+
+    </div>
+</form>
+
+
+
+{% endblock %}
